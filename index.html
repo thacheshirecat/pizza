@@ -10,5 +10,54 @@
   </head>
   <body>
 
+    <div class="container">
+
+      <h1>Pizza Order</h1>
+
+      <div id="order-form">
+
+        <form id="pizza-form">
+
+          <div class="form-group">
+            <select class="form-control" id="pizza-size">
+              <option value="8">Medium ($8)</option>
+              <option value="10">Large ($10)</option>
+              <option value="12">Extra Large ($12)</option>
+            </select>
+
+            <select class="form-control" id="cheese-amount">
+              <option value="0">Regular Cheese (no charge)</option>
+              <option value="2">Extra Cheese ($2)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <p>Choose your Meats</p>
+            <input type="checkbox" name="meat" value="1">Pepperoni<br>
+            <input type="checkbox" name="meat" value="1">Sausage<br>
+            <input type="checkbox" name="meat" value="1">Chicken<br>
+            <input type="checkbox" name="meat" value="1">Ham<br>
+            <input type="checkbox" name="meat" value="1">Bacon<br>
+            <input type="checkbox" name="meat" value="1">Ground Beef<br>
+            <input type="checkbox" name="meat" value="1">Anchovies<br>
+        </div>
+
+        <div class="form-group">
+          <p>Choose your Veggies</p>
+          <input type="checkbox" name="veggie" value="1">Onions<br>
+          <input type="checkbox" name="veggie" value="1">Peppers<br>
+          <input type="checkbox" name="veggie" value="1">Mushrooms<br>
+          <input type="checkbox" name="veggie" value="1">Olives<br>
+          <input type="checkbox" name="veggie" value="1">Diced Tomatoes<br>
+          <input type="checkbox" name="veggie" value="1">Spinach<br>
+          <input type="checkbox" name="veggie" value="1">Roasted Garlic<br>
+      </div>
+
+          <button type="submit" class="btn btn-success">Add Pizza</button>
+        </form>
+
+        <p id="pizza-total-line">Your pizza comes out to $<span id="pizza-total"></span></p>
+</div>
+
   </body>
 </html>
