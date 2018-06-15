@@ -1,9 +1,33 @@
 //
 //Back end
 //
-function PizzaEater(name)
+function PizzaEater(name, street, city, state, zip)
 {
   this.name = name;
+  this.street = street;
+  this.city = city;
+  this.state = state;
+  this.zip = zip;
+}
+//
+PizzaEater.prototype.deliveryAddress = function()
+{
+  if (this.name === "" || this.street === "" || this.city === "" || this.state === "" || this.zip === "")
+  {
+    alert("Please Enter Name and Full Address for Delivery")
+  }
+  else
+  {
+    $("#order-form-user-name").text(this.name);
+    $("#delivery-street").text(this.street);
+    $("#delivery-city").text(this.city);
+    $("#delivery-state").text(this.state);
+    $("#delivery-zip").text(this.zip);
+    $("#user-info").hide();
+    $("#order-form").show();
+    $("#user-info-display").show();
+    $("#delivery-display").show();
+  }
 }
 //
 function Pizza(size, cheese, meats, veggies, price)
@@ -18,16 +42,29 @@ function Pizza(size, cheese, meats, veggies, price)
 Pizza.prototype.pizzaCost = function()
 {
   this.price += this.size;
-  console.log(this.price);
   this.price += this.cheese;
-  console.log(this.price);
   this.price += this.meats;
-  console.log(this.price);
   this.price += this.veggies;
-  console.log(this.price);
   this.price = (this.price * 1.1).toFixed(2);
-  console.log(this.price);
   return this.price;
+}
+//
+Pizza.prototype.pizzaSize = function()
+{
+  var pizzaSizeOutput = ""
+  if (this.size === 8)
+  {
+    pizzaSizeOutput = "Medium";
+  }
+  else if (this.size === 10)
+  {
+    pizzaSizeOutput = "Large";
+  }
+  else if (this.size === 12)
+  {
+    pizzaSizeOutput = "Extra Large";
+  }
+  return pizzaSizeOutput
 }
 //
 //Front end
@@ -36,14 +73,14 @@ $(document).ready(function()
 {
   //
   $("#pizza-form")[0].reset();
-  //
-  $("button#user-info-button").click(function(event)
+  //Carry out button is clicked on initial screen
+  $("button#carry-out-button").click(function(event)
   {
     event.preventDefault();
     var userName = $("input#user-name").val();
     if (userName === "")
     {
-      alert("Please input a name for this order")
+      alert("Name required for a carry out order")
     }
     else
     {
@@ -51,15 +88,27 @@ $(document).ready(function()
       $("#user-info").hide();
       $("#order-form").show();
       $("#user-info-display").show();
-      $("#delivery-display").show();
     }
   });
-  //
+  //Delivery button is clicked on initial screen
+  $("button#delivery-button").click(function(event)
+  {
+    event.preventDefault();
+    var userName = $("input#user-name").val();
+    var userStreet = $("input#user-street").val();
+    var userCity = $("input#user-city").val();
+    var userState = $("input#user-state").val();
+    var userZip = $("input#user-zip").val();
+
+    var newEater = new PizzaEater(userName, userStreet, userCity, userState, userZip);
+
+    newEater.deliveryAddress();
+
+  });
+  //Add Pizza button is clicked on order form
   $("button#pizza-form-button").click(function(event)
   {
     event.preventDefault();
-
-    $("#pizza-total-line").show();
 
     var pizzaSize = parseFloat($("select#pizza-size").val());
     var cheeseAmount = parseFloat($("select#cheese-amount").val());
@@ -84,23 +133,9 @@ $(document).ready(function()
     var newPizza = new Pizza(pizzaSize, cheeseAmount, meatCost, veggieCost, totalPrice);
 
     var pizzaTotal = newPizza.pizzaCost();
+    var pizzaSizeOutput = newPizza.pizzaSize();
 
-    if (newPizza.size === 8)
-    {
-      $("#pizza-size-output").text("Medium");
-    }
-    else if (newPizza.size === 10)
-    {
-      $("#pizza-size-output").text("Large");
-    }
-    else if (newPizza.size === 12)
-    {
-      $("#pizza-size-output").text("Extra Large");
-    }
-
-
-
-    $("#pizza-total").text(pizzaTotal);
+    $("#pizza-total").append("<li>" + pizzaSizeOutput + " pizza: $" + pizzaTotal + "</li>");
     $("#pizza-form")[0].reset();
   });
   //

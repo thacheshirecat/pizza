@@ -10,45 +10,84 @@
   </head>
   <body>
 
+    <img src="img/header.jpg" id="page-header">
+
+    <!-- Initial form for entering user info and choosing carry-out or delivery -->
+    <div id="user-info">
+      <h3>Welcome to Cheesey Pete's!</h3>
+      <p>Please fill out the below form to get started</p>
+      <form id="user-info-input">
+        <div class="form-group">
+          <h4>Name for Order</h4>
+          <input type="text" id="user-name" class="form">
+        </div>
+        <h4>Address (only required for delivery)</h4>
+        <div class="form-group">
+          <label for="user-street">Street</label>
+          <input type="text" id="user-street" class="form">
+        </div>
+        <div class="form-group">
+          <label for="user-city">City</label>
+          <input type="text" id="user-city" class="form">
+        </div>
+        <div class="form-group">
+          <label for="user-state">State</label>
+          <input type="text" id="user-state" class="form">
+        </div>
+        <div class="form-group">
+          <label for="user-zip">Zip</label>
+          <input type="text" id="user-zip" class="form">
+        </div>
+
+
+        <button type="click" id="carry-out-button" class="btn btn-info">Carry-Out</button>
+        <button type="click" id="delivery-button" class="btn btn-warning">Delivery</button>
+      </form>
+    </div>
+
+    <!-- Begginging of the order form -->
     <div class="row">
-      <div class="col-md-2">
-        <div id="user-info-display">
-          <h2>Order for <span id="order-form-user-name"></span></h2>
-        </div>
-        <div id="delivery-display">
-          <h3>Delivery To:</h3>
-          <p><span id="delivery-street"></span></p>
-          <p><span id="delivery-city"></span>, <span id="delivery-state"></span> <span id="delivery-zip"></span></p>
-        </div>
+
+      <!-- Displays user name and delivery address if selected as well as order total -->
+      <div class="col-md-1">
       </div>
+      <div class="col-md-2">
 
-      <div class="col-md-10">
-        <div class="container">
-
-          <div id="user-info">
-            <form id="user-info-input">
-              <div class="form-group">
-                <label for="user-name">Name for Order</label>
-                <input type="text" id="user-name" class="form">
-              </div>
-
-              <button type="click" id="user-info-button" class="btn btn-info">Submit</button>
-            </form>
+        <div id="user-info-display">
+          <div class="well">
+            <h2>Order for <span id="order-form-user-name"></span></h2>
+            <div id="delivery-display">
+              <h3>Delivery To:</h3>
+              <p><span id="delivery-street"></span></p>
+              <p><span id="delivery-city"></span>, <span id="delivery-state"></span> <span id="delivery-zip"></span></p>
+            </div>
           </div>
 
+        </div>
+        <ul id="pizza-total"></ul>
+      </div>
+      <div class="col-md-2">
+      </div>
 
+      <!-- Order Form where user enters input for pizza -->
+      <div class="col-md-7">
+        <div class="container">
           <div id="order-form">
-            <h1>Pizza Order</h1>
+            <h1>Order Your Pie!</h1>
 
             <form id="pizza-form">
 
               <div class="form-group">
+                <label for="pizza-size">Select Size</label>
                 <select class="form" id="pizza-size">
                   <option value="8">Medium ($8)</option>
                   <option value="10">Large ($10)</option>
                   <option value="12">Extra Large ($12)</option>
                 </select>
+              </div>
 
+              <div class="form-group">
+                <label for="cheese-amount">Select Amount of Cheese</label>
                 <select class="form" id="cheese-amount">
                   <option value="0">Regular Cheese (no charge)</option>
                   <option value="2">Extra Cheese ($2)</option>
@@ -79,8 +118,6 @@
 
               <button id="pizza-form-button" type="click" class="btn btn-success">Add Pizza</button>
             </form>
-
-            <p id="pizza-total-line">One <span id="pizza-size-output"></span> pizza: $<span id="pizza-total"></span></p>
           </div>
         </div>
       </div>
