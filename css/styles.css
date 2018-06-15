@@ -31,3 +31,7 @@ label {
   display: none;
   padding-left: 50px;
 }
+
+#checkout-button {
+  display: none;
+}

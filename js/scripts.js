@@ -9,7 +9,7 @@ function PizzaEater(name, street, city, state, zip)
   this.state = state;
   this.zip = zip;
 }
-//
+//A prototype for checking if the user entered their full adress, and adding it to the next page if they have
 PizzaEater.prototype.deliveryAddress = function()
 {
   if (this.name === "" || this.street === "" || this.city === "" || this.state === "" || this.zip === "")
@@ -38,7 +38,7 @@ function Pizza(size, cheese, meats, veggies, price)
   this.veggies = veggies;
   this.price = price;
 }
-//
+//A prototype to calculate the cost of pizza
 Pizza.prototype.pizzaCost = function()
 {
   this.price += this.size;
@@ -48,7 +48,7 @@ Pizza.prototype.pizzaCost = function()
   this.price = (this.price * 1.1).toFixed(2);
   return this.price;
 }
-//
+//A prototype to output the selected size of the pizza
 Pizza.prototype.pizzaSize = function()
 {
   var pizzaSizeOutput = ""
@@ -137,6 +137,7 @@ $(document).ready(function()
 
     $("#pizza-total").append("<li>" + pizzaSizeOutput + " pizza: $" + pizzaTotal + "</li>");
     $("#pizza-form")[0].reset();
+    $("#checkout-button").show();
   });
   //
 });
