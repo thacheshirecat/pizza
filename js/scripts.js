@@ -1,6 +1,8 @@
 //
 //Back end
 //
+var orderTotal = 0;
+//
 function PizzaEater(name, street, city, state, zip)
 {
   this.name = name;
@@ -134,10 +136,27 @@ $(document).ready(function()
 
     var pizzaTotal = newPizza.pizzaCost();
     var pizzaSizeOutput = newPizza.pizzaSize();
+    orderTotal = (parseFloat(pizzaTotal) + parseFloat(orderTotal)).toFixed(2);
+    alert(orderTotal);
+
 
     $("#pizza-total").append("<li>" + pizzaSizeOutput + " pizza: $" + pizzaTotal + "</li>");
     $("#pizza-form")[0].reset();
     $("#checkout-button").show();
   });
+  //
+  $("button#checkout-button").click(function(event)
+  {
+    event.preventDefault();
+
+    $("#order-form").hide();
+    $("#pizza-total").hide();
+    $("#checkout-button").hide();
+    $("#checkout-screen").show();
+    $("#total-money-owed").text(orderTotal);
+    orderTotal = 0;
+
+
+  })
   //
 });

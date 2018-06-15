@@ -17,3 +17,5 @@ Additional Specs:
 2. User inputs address and clicks button, order form displays where pizza will be delivered to //
   Input: 123 House St / Seattle / WA / 98103 - Output: Delivery To: 123 House St, Seattle, WA 98103
 3. If user leaves name or address blank pressing the button will prompt them to fill out the form // Input: "" = Output: alert("Please complete all required fields")
+4. After adding pizza to their order a checkout button will appear which can be clicked to change pages to one that displays the total //
+ Input: user clicks checkout button, two medium cheese pizzas listed - Output: Your total is: $19.60
