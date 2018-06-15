@@ -34,7 +34,23 @@ Pizza.prototype.pizzaCost = function()
 //
 $(document).ready(function()
 {
+  //
   $("#pizza-form")[0].reset();
+  //
+  $("button#user-info-button").click(function(event)
+  {
+    event.preventDefault();
+    var userName = $("input#user-name").val();
+    if (userName === "")
+    {
+      alert("Please input a name for this order")
+    }
+    else
+    {
+      $("#user-info").hide();
+      $("#order-form").show();
+    }
+  });
   //
   $("button#pizza-form-button").click(function(event)
   {
@@ -65,7 +81,7 @@ $(document).ready(function()
     var newPizza = new Pizza(pizzaSize, cheeseAmount, meatCost, veggieCost, totalPrice);
 
     var pizzaTotal = newPizza.pizzaCost();
-    
+
     if (newPizza.size === 8)
     {
       $("#pizza-size-output").text("Medium");
