@@ -9,3 +9,14 @@ select {
 #order-form {
   display: none;
 }
+
+#user-info-display {
+  display: none;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+#delivery-display {
+  display: none;
+  padding-left: 50px;
+}

@@ -47,8 +47,11 @@ $(document).ready(function()
     }
     else
     {
+      $("#order-form-user-name").text(userName);
       $("#user-info").hide();
       $("#order-form").show();
+      $("#user-info-display").show();
+      $("#delivery-display").show();
     }
   });
   //
