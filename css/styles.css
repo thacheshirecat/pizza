@@ -5,3 +5,7 @@ select {
 #pizza-total-line {
   display: none;
 }
+
+#user-info {
+  display: none;
+}

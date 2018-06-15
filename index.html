@@ -12,9 +12,19 @@
 
     <div class="container">
 
-      <h1>Pizza Order</h1>
+      <div id="user-info">
+
+        <form id="user-info-input">
+
+          <button type="click" id="user-info-button" class="btn btn-info">Submit</button>
+        </form>
+
+      </div>
+
 
       <div id="order-form">
+
+        <h1>Pizza Order</h1>
 
         <form id="pizza-form">
 
@@ -53,10 +63,10 @@
           <input type="checkbox" name="veggies" value="0.5">Roasted Garlic<br>
       </div>
 
-          <button type="submit" class="btn btn-success">Add Pizza</button>
+          <button id="pizza-form-button" type="click" class="btn btn-success">Add Pizza</button>
         </form>
 
-        <p id="pizza-total-line">Your pizza comes out to $<span id="pizza-total"></span></p>
+        <p id="pizza-total-line">One <span id="pizza-size-output"></span> pizza: $<span id="pizza-total"></span></p>
 </div>
 
   </body>

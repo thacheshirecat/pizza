@@ -1,6 +1,11 @@
 //
 //Back end
 //
+function PizzaEater(name)
+{
+  this.name = name;
+}
+//
 function Pizza(size, cheese, meats, veggies, price)
 {
   this.size = size;
@@ -31,7 +36,7 @@ $(document).ready(function()
 {
   $("#pizza-form")[0].reset();
   //
-  $("#pizza-form").submit(function(event)
+  $("button#pizza-form-button").click(function(event)
   {
     event.preventDefault();
 
@@ -60,6 +65,22 @@ $(document).ready(function()
     var newPizza = new Pizza(pizzaSize, cheeseAmount, meatCost, veggieCost, totalPrice);
 
     var pizzaTotal = newPizza.pizzaCost();
+    
+    if (newPizza.size === 8)
+    {
+      $("#pizza-size-output").text("Medium");
+    }
+    else if (newPizza.size === 10)
+    {
+      $("#pizza-size-output").text("Large");
+    }
+    else if (newPizza.size === 12)
+    {
+      $("#pizza-size-output").text("Extra Large");
+    }
+
+
+
     $("#pizza-total").text(pizzaTotal);
     $("#pizza-form")[0].reset();
   });
