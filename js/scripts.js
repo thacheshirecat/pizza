@@ -75,6 +75,8 @@ $(document).ready(function()
 {
   //
   $("#pizza-form")[0].reset();
+  //
+  $("#user-info-input")[0].reset();
   //Carry out button is clicked on initial screen
   $("button#carry-out-button").click(function(event)
   {
@@ -137,7 +139,7 @@ $(document).ready(function()
     var pizzaTotal = newPizza.pizzaCost();
     var pizzaSizeOutput = newPizza.pizzaSize();
     orderTotal = (parseFloat(pizzaTotal) + parseFloat(orderTotal)).toFixed(2);
-    alert(orderTotal);
+
 
 
     $("#pizza-total").append("<li>" + pizzaSizeOutput + " pizza: $" + pizzaTotal + "</li>");
@@ -155,8 +157,6 @@ $(document).ready(function()
     $("#checkout-screen").show();
     $("#total-money-owed").text(orderTotal);
     orderTotal = 0;
-
-
   })
   //
 });

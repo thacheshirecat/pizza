@@ -12,6 +12,8 @@
 
     <img src="img/header.jpg" id="page-header">
 
+
+
     <!-- Initial form for entering user info and choosing carry-out or delivery -->
     <div id="user-info">
       <h3>Welcome to Cheesey Pete's!</h3>
@@ -48,8 +50,7 @@
     <!-- Begginging of the order form -->
     <div class="row">
 
-      <!-- Displays user name and delivery address if selected as well as order total -->
-
+      <!-- Displays user name and delivery address if selected -->
       <div class="col-md-4">
         <div id="user-info-display">
           <div class="well">
@@ -68,66 +69,64 @@
       <div class="col-md-1">
       </div>
 
-      <!-- Order Form where user enters input for pizza -->
+      <!-- Order Form where user enters input for pizza as well as where order total is displayed when checkout is selected-->
       <div class="col-md-3">
-        <div class="container">
-          <div id="order-form">
-            <h1>Order Your Pie!</h1>
 
-            <form id="pizza-form">
-
-              <div class="form-group">
-                <label for="pizza-size">Select Size</label>
-                <select class="form" id="pizza-size">
-                  <option value="8">Medium ($8)</option>
-                  <option value="10">Large ($10)</option>
-                  <option value="12">Extra Large ($12)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="cheese-amount">Select Amount of Cheese</label>
-                <select class="form" id="cheese-amount">
-                  <option value="0">Regular Cheese (no charge)</option>
-                  <option value="2">Extra Cheese ($2)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <p>Choose your Meats ($0.75 per meat)</p>
-                <input type="checkbox" name="meats" value="0.75">Pepperoni<br>
-                <input type="checkbox" name="meats" value="0.75">Sausage<br>
-                <input type="checkbox" name="meats" value="0.75">Chicken<br>
-                <input type="checkbox" name="meats" value="0.75">Ham<br>
-                <input type="checkbox" name="meats" value="0.75">Bacon<br>
-                <input type="checkbox" name="meats" value="0.75">Ground Beef<br>
-                <input type="checkbox" name="meats" value="0.75">Anchovies<br>
-              </div>
-
-              <div class="form-group">
-                <p>Choose your Veggies ($0.50 per veggie)</p>
-                <input type="checkbox" name="veggies" value="0.5">Onions<br>
-                <input type="checkbox" name="veggies" value="0.5">Peppers<br>
-                <input type="checkbox" name="veggies" value="0.5">Mushrooms<br>
-                <input type="checkbox" name="veggies" value="0.5">Olives<br>
-                <input type="checkbox" name="veggies" value="0.5">Diced Tomatoes<br>
-                <input type="checkbox" name="veggies" value="0.5">Spinach<br>
-                <input type="checkbox" name="veggies" value="0.5">Roasted Garlic<br>
-              </div>
-
-              <button id="pizza-form-button" type="click" class="btn btn-success">Add Pizza</button>
-            </form>
-          </div>
-
-          <div id="checkout-screen">
-            <div class="well">
-              <h2>Your Total for this Order Will Be:</h2>
-              <h1><span id="total-money-owed"></span></h1>
-            </div>
+        <div id="checkout-screen">
+          <div class="well">
+            <h2>Your Total for this Order Will Be:</h2>
+            <h1>$<span id="total-money-owed"></span></h1>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
+
+        <div id="order-form">
+          <h1>Order Your Pie!</h1>
+
+          <form id="pizza-form">
+
+            <div class="form-group">
+              <label for="pizza-size">Select Size</label>
+              <select class="form" id="pizza-size">
+                <option value="8">Medium ($8)</option>
+                <option value="10">Large ($10)</option>
+                <option value="12">Extra Large ($12)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="cheese-amount">Select Amount of Cheese</label>
+              <select class="form" id="cheese-amount">
+                <option value="0">Regular Cheese (no charge)</option>
+                <option value="2">Extra Cheese ($2)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <p>Choose your Meats ($0.75 per meat)</p>
+              <input type="checkbox" name="meats" value="0.75">Pepperoni<br>
+              <input type="checkbox" name="meats" value="0.75">Sausage<br>
+              <input type="checkbox" name="meats" value="0.75">Chicken<br>
+              <input type="checkbox" name="meats" value="0.75">Ham<br>
+              <input type="checkbox" name="meats" value="0.75">Bacon<br>
+              <input type="checkbox" name="meats" value="0.75">Ground Beef<br>
+              <input type="checkbox" name="meats" value="0.75">Anchovies<br>
+            </div>
+
+            <div class="form-group">
+              <p>Choose your Veggies ($0.50 per veggie)</p>
+              <input type="checkbox" name="veggies" value="0.5">Onions<br>
+              <input type="checkbox" name="veggies" value="0.5">Peppers<br>
+              <input type="checkbox" name="veggies" value="0.5">Mushrooms<br>
+              <input type="checkbox" name="veggies" value="0.5">Olives<br>
+              <input type="checkbox" name="veggies" value="0.5">Diced Tomatoes<br>
+              <input type="checkbox" name="veggies" value="0.5">Spinach<br>
+              <input type="checkbox" name="veggies" value="0.5">Roasted Garlic<br>
+            </div>
+
+            <button id="pizza-form-button" type="click" class="btn btn-success">Add Pizza</button>
+          </form>
+        </div>
+
       </div>
     </div>
   </body>
