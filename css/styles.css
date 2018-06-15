@@ -1,9 +1,18 @@
+body {
+  background-image: url("../img/bg.jpg");
+  font-weight: bold;
+}
+
 select {
   margin-bottom: 15px;
 }
 
 label {
   display: block;
+}
+
+#pizza-total {
+  color:   #06103f;
 }
 
 #page-header {
@@ -15,10 +24,12 @@ label {
 
 #user-info {
   text-align: center;
+  color:   #06103f;
 }
 
 #order-form {
   display: none;
+  color:   #06103f;
 }
 
 #user-info-display {
@@ -34,4 +45,9 @@ label {
 
 #checkout-button {
   display: none;
+  margin-left: 280px;
+}
+
+#pizza-total {
+  text-align: center;
 }
