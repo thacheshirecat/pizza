@@ -10,6 +10,7 @@ Specs:
   Output: $15.00 ((3 * 0.50) + (2 * 0.75) + 2 + 10)
 5. Add tax //
   Input $15.00 - Output: $16.50 (15 * 1.1)
+  
 Additional Specs:
 1. User inputs name and clicks button, order form features text using name //
   Input: Alex Bunnell - Output: Order For Alex Bunnell
