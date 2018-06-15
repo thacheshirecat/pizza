@@ -1,3 +1,25 @@
+
+Author Name:
+Alex Bunnell
+
+Program Name:
+Pizza Order Form
+
+Setup Instructions:
+
+    1. Clone the repository from https://github.com/thacheshirecat/pizza
+    2. navigate to the pizza folder
+    3. Open index.html,
+    4. Follow instructions on page
+
+Or visit the page online at: https://thacheshirecat.github.io/pizza/
+
+Description:
+This web application was designed using JS Objects and Prototypes. It is a mock pizza ordering web application.
+
+Copyright and License Information:
+This code utilizes an MIT license
+
 Specs:
 1. User selects a pizza size //
   Input: Large - Output: $10
